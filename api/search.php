@@ -42,9 +42,9 @@ if (isset($_GET['location']) && isset($_GET['specialty'])) {
             <p>E-CLINIC</p>
         </div>
         <div class="links">
-            <div onclick="redirectTo('index.php')">Home</div>
+            <div onclick="redirectTo('./index.html')">Home</div>
             <div onclick="redirectTo('search.php')">Find a Doctor</div>
-            <div onclick="redirectTo('login.php')">Login</div>
+            <div onclick="redirectTo('./login.html')">Login</div>
         </div>
     </div>
 
