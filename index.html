@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="./index.css">
     <link rel="shortcut icon" href="./images/logoblue.jpg" type="image/x-icon">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Space Grotesk">
-    <script src="./api/functions.js"></script>
+    <script src="./functions.js"></script>
 </head>
 <body>
     <div class="navbar">
@@ -16,9 +16,9 @@
             <p>E-CLINIC</p>
         </div>
         <div class="links">
-            <div onclick="redirectTo('index.html')">Home</div>
+            <div onclick="redirectTo('./index.html')">Home</div>
             <div onclick="redirectTo('./api/search.php')">Find a Doctor</div>
-            <div onclick="redirectTo('login.html')">Login</div>
+            <div onclick="redirectTo('./login.html')">Login</div>
         </div>
     </div>
 
@@ -57,7 +57,7 @@
 
     <section id="start">
         <h2 id="start_text">Ready to Find the Right Doctor?</h2>
-        <div id="start_button" onclick="redirectTo('signup.html')">Create an account</div>
+        <div id="start_button" onclick="redirectTo('./signup.html')">Create an account</div>
     </section>
 </body>
 </html>
