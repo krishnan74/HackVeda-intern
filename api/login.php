@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Sign Up</title>
+  <title>Login</title>
   <link rel="stylesheet" type="text/css" href="login.css">
   <script src="functions.js"></script>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Space Grotesk">
   <link rel="shortcut icon" href="./images/logoblue.jpg" type="image/x-icon">
-  
+
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Space Grotesk">
 
 </head>
 <body>
@@ -15,27 +15,26 @@
       <p>E-CLINIC</p>
     </div>
     <div class="links">
-      <div onclick="redirectTo('index.html')">Home</div>
-      <div onclick="redirectTo('search.html')">Find a Doctor</div>
-      <div onclick="redirectTo('login.html')">Login</div>
+      <div onclick="redirectTo('index.php')">Home</div>
+      <div onclick="redirectTo('search.php')">Find a Doctor</div>
+      <div onclick="redirectTo('login.php')">Login</div>
     </div>
     
   </div>
   <div class="line">.</div>
   <form id="loginForm">
-    <h1>Sign Up</h1>
+    <h1>Login</h1>
 
     <label for="email">Email:</label>
     <input type="email" id="email" name="email" required>
     <label for="password">Password:</label>
     <input type="password" id="password" name="password" required>
-    <label for="password">Confirm Password:</label>
-    <input type="password" id="confirmPassword" name="password" required>
-    <button type="submit">SignUp</button>
+    <div id="remember"><input type="radio"><p>Remember me</p></div>
+    <button type="submit" >Login</button>
+    <a src="#">Forgot your password ?</a>
   </form>
 
-  <p id="account_text">Already have an account? <a href="login.html">Login here</a></p>
+  <p id="account_text">Don't have an account? <a href="signup.php">Sign up</a> for E-Clinic</p>
 
 </body>
-<script src="signup.js"></script>
 </html>

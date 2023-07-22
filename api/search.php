@@ -1,3 +1,28 @@
+<?php
+
+$conn = new mysqli('localhost','root','','doctors');
+	if($conn->connect_error){
+		echo "$conn->connect_error";
+		die("Connection Failed : ". $conn->connect_error);
+	} 
+	
+
+if (isset($_GET['location']) && isset($_GET['specialty'])) {
+    $searchLocation = $_GET['location'];
+    $searchSpecialty = $_GET['specialty'];
+
+    $sqlquery = "SELECT * FROM doctors_table WHERE location = ? AND specialty = ?";
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param("ss", $searchLocation, $searchSpecialty);
+    $stmt->execute();
+
+    $result = $stmt->get_result();
+
+    $stmt->close();
+    $conn->close();
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,9 +42,9 @@
             <p>E-CLINIC</p>
         </div>
         <div class="links">
-            <div onclick="redirectTo('index.html')">Home</div>
-            <div onclick="redirectTo('search.html')">Find a Doctor</div>
-            <div onclick="redirectTo('login.html')">Login</div>
+            <div onclick="redirectTo('index.php')">Home</div>
+            <div onclick="redirectTo('search.php')">Find a Doctor</div>
+            <div onclick="redirectTo('login.php')">Login</div>
         </div>
     </div>
 
@@ -35,8 +60,8 @@
         
     
         <div class="search-container">
-            <input type="text" id="location-input" placeholder="Location" list="location-options">
-            <datalist id="location-options">
+            <input type="text" id="location-input" placeholder="Location" name = "location" list="location-options">
+            <datalist id="location-options"> 
                 <option value="New York">
                 <option value="San Francisco">
                 <option value="London">
@@ -66,7 +91,7 @@
             
     
             
-            <input type="text" id="specialty-input" placeholder="Specialty" list="specialty-options">
+            <input type="text" id="specialty-input" placeholder="Specialty" name = "specialty" list="specialty-options">
             <datalist id="specialty-options">
                 <option value="Cardiologist">
                 <option value="Dermatologist">
@@ -94,11 +119,22 @@
     
     <div class="doctors_div">
         <p id="doctor_header">List of Doctors</p>
-        <div id="doctors-list"></div>
+        <div id="doctors-list">
+        <?php    
+            while ($row = mysqli_fetch_assoc($result)) {
+                    ?>
+                    <div>
+                        <h3><?php echo $row['name']; ?></h3>
+                        <p>Location: <?php echo $row['location']; ?></p>
+                        <p>Speciality: <?php echo $row['speciality']; ?></p>
+                    </div>
+        <?php
+            }
+        ?>
+        </div>
     </div>
     
       
 </body>
-<script src="search.js"></script>
 
 </html>

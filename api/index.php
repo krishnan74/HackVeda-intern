@@ -16,9 +16,9 @@
             <p>E-CLINIC</p>
         </div>
         <div class="links">
-            <div onclick="redirectTo('index.html')">Home</div>
-            <div onclick="redirectTo('search.html')">Find a Doctor</div>
-            <div onclick="redirectTo('login.html')">Login</div>
+            <div onclick="redirectTo('index.php')">Home</div>
+            <div onclick="redirectTo('search.php')">Find a Doctor</div>
+            <div onclick="redirectTo('login.php')">Login</div>
         </div>
     </div>
 
@@ -39,13 +39,13 @@
         <div class="feature_card ">
             <h3 class="feature_card_header">Comprehensive Doctor Search</h3>
             <p class="feature_card_desc">Easily search and browse through a diverse database of doctors to find the one that suits your needs.</p>
-            <button onclick="redirectTo('search.html')" class="feature_card_button">Try Now!</button>
+            <button onclick="redirectTo('search.php')" class="feature_card_button">Try Now!</button>
         </div>
 
         <div class="feature_card ">
             <h3 class="feature_card_header">Patient Reviews and Ratings</h3>
             <p class="feature_card_desc">Read genuine patient reviews and ratings to make informed decisions about your healthcare provider.</p>
-            <button onclick="redirectTo('search.html')" class="feature_card_button">Try Now!</button>
+            <button onclick="redirectTo('search.php')" class="feature_card_button">Try Now!</button>
         </div>
 
         <div class="feature_card ">
@@ -57,7 +57,7 @@
 
     <section id="start">
         <h2 id="start_text">Ready to Find the Right Doctor?</h2>
-        <div id="start_button" onclick="redirectTo('signup.html')">Create an account</div>
+        <div id="start_button" onclick="redirectTo('signup.php')">Create an account</div>
     </section>
 </body>
 </html>
